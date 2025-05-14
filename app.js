@@ -178,3 +178,16 @@ window.onload = () => {
   initHero('Bandido');
   showTab('statsTab');
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".tabs button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tabId = btn.getAttribute("data-tab");
+      document.querySelectorAll(".tabContent").forEach(t => t.style.display = "none");
+      document.getElementById(tabId).style.display = "block";
+    });
+  });
+
+  // Default to showing the Stats tab
+  document.getElementById("statsTab").style.display = "block";
+});
