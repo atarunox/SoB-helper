@@ -48,3 +48,57 @@ document.addEventListener("DOMContentLoaded", () => {
   initHero("Bandido");
   showTab("statsTab");
 });
+
+
+import { keywords } from './keywords.js';
+
+function renderLibraryTab() {
+  const tab = document.getElementById('libraryTab');
+  tab.innerHTML = '<h3>Keyword Library</h3>';
+  const input = document.createElement('input');
+  input.placeholder = "Search...";
+  const resultsDiv = document.createElement('div');
+  tab.appendChild(input);
+  tab.appendChild(resultsDiv);
+
+  const displayResults = (list) => {
+    resultsDiv.innerHTML = '';
+    let currentCategory = null;
+    list.forEach(k => {
+      if (k.keyword === "Category") {
+        currentCategory = document.createElement('details');
+        const summary = document.createElement('summary');
+        summary.textContent = k.description;
+        currentCategory.appendChild(summary);
+        resultsDiv.appendChild(currentCategory);
+      } else if (currentCategory) {
+        const div = document.createElement('div');
+        div.innerHTML = '<strong>' + k.keyword + '</strong>: ' + k.description;
+        div.style.marginLeft = '1em';
+        currentCategory.appendChild(div);
+      }
+    });
+  };
+
+  input.addEventListener('input', () => {
+    const val = input.value.toLowerCase();
+    const filtered = keywords.filter(k =>
+      k.keyword !== "Category" && (
+        k.keyword.toLowerCase().includes(val) ||
+        k.description.toLowerCase().includes(val)
+      )
+    );
+    resultsDiv.innerHTML = '';
+    filtered.forEach(k => {
+      const div = document.createElement('div');
+      div.innerHTML = '<strong>' + k.keyword + '</strong>: ' + k.description;
+      resultsDiv.appendChild(div);
+    });
+  });
+
+  displayResults(keywords);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderLibraryTab();
+});
