@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="module" src="app.js"></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <h1>Hero Tracker</h1>
@@ -15,13 +14,13 @@
     <option value="Gunslinger">Gunslinger</option>
   </select>
   <div class="tabs">
-    <button onclick="showTab('statsTab')">Stats</button>
-    <button onclick="showTab('gearTab')">Gear</button>
-    <button onclick="showTab('abilitiesTab')">Abilities</button>
-    <button onclick="showTab('treeTab')">Upgrade Tree</button>
-    <button onclick="showTab('conditionsTab')">Conditions</button>
-    <button onclick="showTab('libraryTab')">Library</button>
-    <button onclick="showTab('devTab')">Dev Mode</button>
+    <button data-tab="statsTab">Stats</button>
+    <button data-tab="gearTab">Gear</button>
+    <button data-tab="abilitiesTab">Abilities</button>
+    <button data-tab="treeTab">Upgrade Tree</button>
+    <button data-tab="conditionsTab">Conditions</button>
+    <button data-tab="libraryTab">Library</button>
+    <button data-tab="devTab">Dev Mode</button>
   </div>
   <div id="statsTab" class="tabContent"></div>
   <div id="gearTab" class="tabContent"></div>
