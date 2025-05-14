@@ -8,7 +8,8 @@ let corruptionMax = 5;
 
 window.showTab = function(id) {
   document.querySelectorAll('.tabContent').forEach(tab => tab.style.display = 'none');
-  document.getElementById(id).style.display = 'block';
+  const target = document.getElementById(id);
+  if (target) target.style.display = 'block';
 };
 
 window.initHero = function(className) {
@@ -48,6 +49,7 @@ function updateUI() {
 
 function renderStatsTab() {
   const tab = document.getElementById('statsTab');
+  if (!hero.stats) return;
   const s = hero.stats;
   const base = ['Agility','Cunning','Spirit','Strength','Lore','Luck'];
   const combat = ['Initiative','Combat','Grit','Willpower','Defense'];
@@ -90,7 +92,6 @@ function renderTreeTab() {
 function renderConditionsTab() {
   document.getElementById('conditionsTab').innerHTML = '<h3>Conditions</h3><p>Coming soon...</p>';
 }
-
 function renderLibraryTab() {
   const tab = document.getElementById('libraryTab');
   tab.innerHTML = '<h3>Keyword Library</h3>';
@@ -135,7 +136,6 @@ function renderLibraryTab() {
 
   displayResults(keywords);
 }
-
 function renderDevTab() {
   const tab = document.getElementById('devTab');
   tab.innerHTML = '<h3>Dev Mode</h3>';
