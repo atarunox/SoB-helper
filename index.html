@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hero Tracker</title>
+  <title>SoB Hero Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
@@ -17,18 +17,25 @@
   <div class="tabs">
     <button data-tab="statsTab">Stats</button>
     <button data-tab="gearTab">Gear</button>
+    <button data-tab="abilitiesTab">Abilities</button>
+    <button data-tab="treeTab">Upgrade Tree</button>
+    <button data-tab="conditionsTab">Conditions</button>
     <button data-tab="libraryTab">Library</button>
     <button data-tab="devTab">Dev Mode</button>
   </div>
   <div id="statsTab" class="tabContent"></div>
   <div id="gearTab" class="tabContent"></div>
+  <div id="abilitiesTab" class="tabContent"></div>
+  <div id="treeTab" class="tabContent"></div>
+  <div id="conditionsTab" class="tabContent"></div>
   <div id="libraryTab" class="tabContent"></div>
   <div id="devTab" class="tabContent"></div>
+
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log("Service Worker registered"))
-        .catch(err => console.error("SW registration error:", err));
+        .catch(err => console.error("SW error:", err));
     }
   </script>
 </body>
