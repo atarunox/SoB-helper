@@ -1,0 +1,4 @@
+body { font-family: sans-serif; padding: 20px; background: #f4e8d4; }
+input, select { margin: 10px 0; display: block; width: 100%; max-width: 300px; }
+.tabContent { display: none; margin-top: 20px; }
+button { margin-right: 5px; }
