@@ -1,0 +1,9 @@
+{
+  "name": "Shadows of Brimstone Helper",
+  "short_name": "SoB Tracker",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f4e8d4",
+  "theme_color": "#8b5a2b",
+  "icons": []
+}
