@@ -1,1 +1,1 @@
-// keyword data here
+export const keywords = [{ keyword: 'Category', description: 'Test Category' }, { keyword: 'Test', description: 'Keyword Description' }];

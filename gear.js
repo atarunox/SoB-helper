@@ -1,1 +1,1 @@
-// gear data here
+export const gearList = [{ id: 'pistol', name: 'Rusty Pistol', effects: { Agility: 1 } }];
