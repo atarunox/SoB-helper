@@ -1,0 +1,1 @@
+// full conditions module

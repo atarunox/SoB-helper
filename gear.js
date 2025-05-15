@@ -1,0 +1,1 @@
+// full gear data module
